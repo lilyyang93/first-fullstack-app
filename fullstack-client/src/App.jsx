@@ -2,9 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  axios.get("/whoami")
+    .then((response) => {
+      console.log(response.data)
+    })
 
   return (
     <div className="App">
